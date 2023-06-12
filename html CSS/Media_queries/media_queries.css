@@ -1,0 +1,30 @@
+/* Media queries permettent de ré-aranger ma dispostin du site en fonction du taile des navigateur en pixelle   https://viewportsizer.com/ */
+
+.zone-adaptative{
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+
+
+
+@media (min-width: 768px){
+	.zone-adaptative{
+		width: 750px;
+		background:orange;
+		}
+}
+
+@media (min-width: 992px){
+	.zone-adaptative{
+		width: 970px;
+		background:blue;
+		}
+}
+
+@media (min-width: 1200px){
+	.zone-adaptative{
+		width: 1170px;
+		background:green;
+		}
+}

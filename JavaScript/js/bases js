@@ -1,0 +1,160 @@
+// commentaire sur une ligne
+
+/*
+ici , je fait un commentaire su plusieurs lignes
+
+ */
+// -- 1 :  Déclarer une variable en JS
+
+var Prenom;
+
+// -- 2 : Affecter une valeur à une variable
+
+ // prenom "Mila" ;
+
+   Prenom="Mila";
+
+// -- 3 : une instruction se tremine TOUJOURS par un point- virgule  aussi il est possible d'ecrire plusieurs instruction sur une seule ligne
+
+// instr_1
+
+// instr_2 ; inster_3;
+
+// -- 4 : Afficher une boite de dialogue ( 2 façons)
+
+// alert("Super,est arrivé sur mon site !") ; 
+
+// window.alert("Super,tu est arrivé sur mon site !")
+
+
+//-- 5: Afficher dans la console (ici , la valeur de ma variable prenom)
+//console.log(Prenom);
+
+// -- 6 : Afficher sur la page web
+
+
+// document.write("A la pause bachir dort");
+
+// -- 7 : demender a l'utilisateur une valeur
+
+// window.prompt(" Question : on est quelle jour ?" , "jour de la semaine") ;
+
+
+// prompt("question :on est quelle jour ?" , "jour de la semaine");
+
+// -- et our amnipuler cette valeur , je n'oublie pas de la stoker
+//var jour=prompt("Question : on est quelle jour ?" , "jour de la semaine ");
+
+//  console.log(jour); 
+
+// -- 8 : attention /! \le js est sensible à la case ('case sensitive')
+
+// mavariable =/=maVariable =/= ma_variable
+ 
+ //             camel case    snake case
+
+
+ // -- 9 : Une variable ne peut pas commnecer par un chiffre , ne doit contnir que des  caractée alphanumériques , et ne paut pas être un mot réserver (var,for ... des elements natifs du langeges JS)
+
+
+// -- 10 : Un  variable peut être declarere de facon explicite : 
+
+
+// façon explicite
+
+// var fruit;
+
+//fruit= "mirtie" ;
+
+// ou implicite :
+
+//var fruit_2 = "poir" ;
+
+/*
+
+~~~~~~~~~~~~~~ Les types de variables           ~~~~~~~~~~~~~~
+*/ 
+
+
+// 1. chaine se caractéres (string)
+
+var vacances = "2023";
+var destibation = "maldive";
+// console.log(vacances,destination);
+
+// 2. Un nombre entier (integer ou int )
+var annee = 2023;
+// console.log(annee);
+
+// 3. un nombre décimal (float)
+var nombre_a_virgule = -5.32;
+
+//  console.log(nombre_a_virgule );
+
+var vacances="2020";
+// console.log(vacances);
+
+
+// 4. Un booléen ( booléan = Vrais/Faux = True/fALSE)
+
+var unBoleen = false;
+
+
+// 5.  Les Constantes
+
+
+/*    
+      La d'ecleration const permet de créer une constante accecible uniquement en lecteur.
+      Contrairement à une variable sa valeur ne peut plus être modifier par reaffection plus bas dans le code
+      Une constate n epeut pas être décmlaree à nouveau dans le même script
+*/ 
+
+// -- par convention les constantes son en majusqulle
+
+
+const PAYS = "France";  // string
+const AN ="2020"; // string
+const BIRTH = 2020; // nombre /int   /  integer
+
+
+//  -- 6. typeof permet de connaitre le type de ma variable
+
+// console.log(vacances);
+console.log(typeof vacances);
+console.log(typeof annee);
+
+//  en js les variables sont auto-typees
+//  on peut convertir un evariable de type NUMBER en STRING et aussi STRING en NUMBER avec les fonction natives de js caravtéres 
+
+var unChiffre ="12";
+console.log(unChiffre);
+console.log(typeof unChiffre);
+
+//  STRING => NUMBER
+
+unChiffre = parseInt(unChiffre);
+console.log(unChiffre);
+console.log(typeof unChiffre);
+
+
+// je ré-affect en valeur
+
+unChiffre ="12.22";
+console.log(unChiffre);
+console.log(typeof unChiffre);
+
+
+// STRING => FLOAT 
+unChiffre = parseFloat(unChiffre);
+console.log(unChiffre);
+console.log(typeof unChiffre);
+
+
+//  NUMBER => STRING
+var nb_en_lettres = 258;
+console.log(nb_en_lettres);
+console.log(typeof nb_en_lettres);
+
+var nb_en_lettres = nb_en_lettres.toString();
+console.log(nb_en_lettres);
+console.log(typeof nb_en_lettres);

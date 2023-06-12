@@ -1,0 +1,53 @@
+/*commentaires en css */
+*{ /* l'toile ou asterique signifie qu'on selection tout kle document, c'est un sélecteur universel*/
+text-align: right; }
+
+    
+body{
+    background: #f5deb3; /*couleur de fond*/
+}
+
+header{
+    background-color: #900c3f;
+    color: #fff; /*couleur du texte*/
+    height: 100px;/*hauteur fixée à 100 pixels*/
+}
+nav{
+    background-color: aqua;
+    height: 60px;
+}
+select{
+    background-color: black;
+    height: 55px;
+}
+article{ 
+    background-color: aquamarine;
+    height: 65px;
+}
+footer{
+    background-color: darkgray;
+    height: 75px;
+}
+nav, footer{
+    /* je separe les differents balises à selectionner par des virgules */
+    color: #900c3f;
+
+}
+.jaune{
+/* pour selectioner une class en css, jutulise un poibt avant le nom que j'ai lui donné */
+    background-color: yellow;
+}
+#noir{
+    /* pour sibler l 'id j'utulise un diése */
+    background-color: black;
+    color: #fff;
+    text-align: justify;
+    font-size:25px;
+    
+}
+/* selecteur= classe id,balise
+prpriéter=color, texte lingn ...
+valeur=blak, justify...
+
+/* 
+

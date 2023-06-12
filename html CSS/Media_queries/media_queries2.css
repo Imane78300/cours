@@ -1,0 +1,127 @@
+.container{
+    width: 1300px;
+    margin: 0 auto;
+}
+
+div{margin: 0;
+
+}
+header{
+    background-color: pink;
+}
+nav{
+    background-color: #4a1a2c;
+    height: 50px; /* 1em=16px*/
+    padding-left: 2em;
+    line-height: 45px; /* on peut remplacer line-height par margin(top et bottom)*/ 
+}
+nav a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 2em;
+    border-right: 1px solid #fff;
+    padding-right: 2em;
+}
+footer{ 
+    background-color: palevioletred;
+    height: 100px;
+}
+nav a:last-child{
+    /* il va selection le dernier enfantes a qui  ce trouve à l'interieure du nav*/
+    border-right: none; /*  supprime la bordure de droite*/
+}
+section{
+
+    /* on applique qisplay:flex sur le parent  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+section div{
+    /* selection tous les div qui se trouve a l'interieur des section */
+    width: 32vh; /* L42QUIVALENT DE 46%  de largeur */
+    height: 50vh;
+}
+
+.zone1, .zone4{
+    background:linear-gradient(#40a497, #6840a4);}
+
+
+
+.zone2, .zone3{
+    background-color: #73adce;
+}
+
+
+main{
+    border: 1px solid black;
+}
+
+.zone3 , .zone4{
+    margin-top: 15px;
+}
+
+/* appel des medias queris */
+@media screen and  (max-width: 768px){
+  /* j'annonce que la taille de l'écran est changé */
+
+.container{
+    width: 90%;
+}
+header{
+    background-color: green;
+}
+
+section{
+    width: 80vh;/* chaque div v aprendre 80% de l'espace disponible*/
+}
+    section{
+        flex-direction: column; /* on peut changer l'axe principal de flex pour avoir l'affichage en bloc pour chaque div */
+    }
+
+    nav a{
+display: block;
+font-size: 16px;
+border: none;
+    }
+.zone2{
+margin-top: 15px;
+background-color: orange;
+}
+
+footer{
+    background-color: green;
+}
+
+} /* la fin de fourchette tabllete max-widh: 786px*/
+1
+@media screen and ( min-width:992px)  and (max-width:1200px) {
+    /* le debu de nouvele interval pour les tailles au dela de 982px jusq'a 1200px  */
+    /* ici on ajoute le css pour rajouster l'affichage pour les ecrans  superieurs à 992px */
+    .contnainer{
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    header{
+        background-color: orangered;
+    }
+    footer{
+        background-color: orange;
+    }
+    section div{
+        width: 41vh;
+    }
+    .zone2 , .zone3{
+        background-color:#f479d8 ;
+    }
+.zone1, .zone4{
+background-image: url(../_liens/image.jpg);
+background-size: cover; /* avec cover l'image couvre la totalité du bloc (même s l'image es plus grande)*/
+}
+
+} /* la fin de */

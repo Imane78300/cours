@@ -1,0 +1,11 @@
+.contenu{
+    height: 45px; /* hauteur*/
+    width: 45em; ;/*largeur */
+    margin:auto ;/*centre */
+    border-radius: 50%;/* arrondie les angles*/
+    background:linear-gradient(to left,#40a440,#6840a6) ;/* degrade qui demare avec nla premier couleur à doite et la dernier à gauche violet- vert*/ /*  lien vers un generateur de degrades:-moz-window-shadow:.cssgradient.io*/
+
+
+    
+}
+

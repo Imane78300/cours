@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="03_forlulaire.css">
+    </head>
+    <body>
+        <!-- je déclare mon formulaire avec la balise forme-->
+    <form>
+        <!-- deux maniére de déclarer le label-->
+        <label for="pseudo">Psaudonyme
+        <input type="texte" id="pseudo" name="pseudo"
+        placenholder="exemple" required>
+        <!-- l'id combinée à for permet de lier le label a l'input typre presise le type de donnée
+ recuperee , name sera utiliser en php pour recupere la donnée, le placehoder contient le texte qui apparait dans l'input resuised précise au navigateur que le champs est à reseigner obligatoirement--> 
+</label>
+ <!-- mot de pass -->
+ <label for="mdp">
+    <!-- label au dessus de l'input-->
+    mot de pass <span tittle="le mot de pass peut contenir ...">*</span>
+
+ </label>
+ <input type="passwor" name="mdp" id="md" placeholder="mot de pass" required>
+ <br>
+ <br>
+ <!-- email -->
+ <label for="email" id="email" name="email"placeholder="email"></label>
+    <br>
+    <br>
+    <!-- fisher -->
+    
+<label for="photos">photos</label>
+<input type="file" id="photo" name="photo">
+<br>
+<br>
+        <fieldset>
+            <legend>Choix multiples</legend>
+            <!-- cases à cocher checkbox -->
+            <!-- plusieurs choix -->
+            <label for="q1">Quelle destination choisissez-vous?</label>
+            <p> <!-- input*3 -->
+               <input type="checkbox" id="q1" name="repnse01">Italie
+               <input type="checkbox" id="q1" name="repnse02">Tunisie
+               <input type="checkbox" id="q1" name="repnse03">Espagne
+
+            </p>
+            <br>
+            <!-- cases à cocher radio  -->
+            <!-- un choix -->
+            <label for="q2"> Qui seront vos accompagnateurs</label>
+               <input type="radio" id="q2" name="reponse">En famille
+                <input type="radio" id="q2" name="reponse" checked>Entre amis
+                <input type="radio" id="q2" name="reponse">Solo
+                <!-- checked = coché par défaut -->
+            </p><!-- un seul choix avec les bouton radio on force l'utilisateur à choisir-->
+            <br>
+
+            <!-- zonz de texte -->
+
+            <label for="commentaires"> commentaire</label>
+            <textarea name="commantaire" id="commentaire" cols="80" rows="8"></textarea>
+            <!-- rows=nombre de lignes -->
+            <!-- coles nombre de colones/ caractéres -->
+            <br>
+            <!-- buton envoie formulaire -->
+            
+
+            <input type="submit" name="inscription" valeur="envoiyer">
+
+            <!-- buton pour vider le formulaire -->
+            <input type="reset" name="annuler" value="annuler">
+
+       <br>
+
+        <a href="https://www.w3schools.com/html/html_form_input_types.asp" target="_blank"
+            rel="noopener noreferrer">W3school, les types d'input</a>
+
+        <br>
+
+        <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input" target="_blank"
+            rel="noopener noreferrer">Petite documentaton</a>
+            
+        </fieldset>
+
+
+
+    </form>
+    </body>
+</html>

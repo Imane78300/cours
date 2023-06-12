@@ -1,0 +1,47 @@
+body{
+    margin: 0 auto;
+    /* margain:0 auto 0 auto;-> haut droite bas gauche margin:0;   
+    margine:0 auto 1;haut|  horisontal|bas    */
+    background-color: antiquewhite;
+}
+div{
+    width:90% ;
+    margin:0 auto;
+    background-color: lightblue;
+}
+p{
+    background-color: mediumaquamarine;
+}
+
+p span{
+    background-color: yellow;/* selection les sapn  contenus dans le paragrphe*/
+}
+.boite{
+    height: 11vh;
+    width: 18vh;
+    padding: 5vh;
+    background: url(../float/img/funny_table_minion\ \(1\).jpg);
+    background-repeat: no-repeat;
+    border: 5px double orchid ;/* taille, style,coleur de bordure */
+    margin: 2vh;
+    float:left ;/* effet flottant qui permet de palcer des balises côte à côte alors que selon le flux du web santdard les elements se placent les uns au-dessu des autres  */
+    transition: margin 1.5s;/* proprietéeet  et durée */
+}
+/* https://outils-css.aliasdmc.fr/unites-de-longueurs-css.php
+        EM: Relative to the parent element
+ 
+        REM: Relative to the root element (HTML tag)
+ 
+        %: Relative to the parent element
+ 
+        VW: Relative to the viewport’s width
+ 
+        VH: Relative to the viewport’s height
+    */
+.boite:hover{
+    /* la nomclass:hover modifier un affichage  au survol de la souris */
+    margin-top: 10vh;
+}
+.clear{
+    clear: both;/* supprume l'effet flottant */
+}
