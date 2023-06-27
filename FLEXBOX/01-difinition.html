@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Définition Conteneur Flex</title>
+
+<style>
+    /* Le flexible Box Layout que ne pouvent traduire par "modéle des boite flexible" , nous propose un consept et mis en page des boites .
+     Lélément de structure de base es un conteneur qui donne le contexte de boite flexible (flex-container en anglais) .
+     Tous les éléments enafants de ce conteneur parent hériton de ce contexte et seron des items flexibles(flesx-items).*/
+
+/* nous aurons donc
+
+- un contenuer parent flexible donnée par la priptiété display:flex; 
+- tous les éléments enfants directs serons des items flexible .*/
+
+/* --------------------------------------------------------------------- */
+
+/* Nous pourrons ensuites géré la distrubition de séléments enfants , géré les alignements et les centrages, choisir de réorganiser l'affichage
+des items et gérer les espaces.  */
+
+        /* ------------------------------------------------------------- */
+
+
+/* C'est avec la popriété "display:flex"; que noouq allons définir le contexte de boite flexible pour un conteneur donnée.
+Nous creons une <div>  flexible avec trois <p> enfants .*/
+
+
+.boites-flexible{
+      display: flex;
+      /* display flex sert a mettre le texte dans la meme ligne */
+      border: solid 1px #000;
+      /* On met une bordure bien visualliser le conteneur */
+}
+
+/* Nous povons tester l'aspect flexible de cette mise en page en redimensionnant Les paragaraphe enfants, donc les items , 
+s'adapptent automatiquement à la largeur d el afemetre du navigateur,Nous avons mise en page flesible */
+
+
+
+
+
+</style>
+</head>
+<body>
+    
+<div class="boite-flexible">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam quaerat natus quis autem quae dolor vero,
+        modi qui veniam, facilis labore, a nobis odio debitis facere error non esse ipsam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore distinctio molestias voluptatibus dignissimos
+        provident alias, libero nihil incidunt facere possimus natus. Quibusdam autem doloremque provident eum,
+        porro voluptates esse fugit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae doloribus est esse illo amet cum
+        doloremque mollitia a expedita rerum officiis, accusantium sequi natus omnis dolor libero nulla culpa
+        impedit.</p>
+</div>
+
+
+</body>
+</html>

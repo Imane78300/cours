@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600&family=Texturina:ital,wght@0,700;0,900;1,100&display=swap');
+
+/* l'etoile selectioner tous */
+
+*{
+box-sizing: border-box;
+/* box-sizing: border-box; il fait une bordure dans son parents */
+overflow-x: hidden;
+/* x = orisentale  */
+}
+
+
+body{
+
+font-family: 'Dosis' , sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,em,footer p{ 
+    /* la vergule = "et" */
+font-family: 'Texturina', serif;
+}
+
+/* jumbotron */
+
+
+.jumbotron{
+
+ background-image: url(../img/banner-buisnessman.jpg);
+ height: 711px;
+}
+
+.jumbotron div q:first-of-type{
+  font-size: 5em;
+  overflow-y: hidden;
+}
+
+.jumbotron div q:last-of-type{
+   font-size: 1.8em;
+}
+
+.fas.fa-chevron-down{
+ font-size: 500%;
+}
+
+/* PROJECTS*/
+
+section{
+
+margin: 0;
+padding: 0 !important;
+/*  la mot clef !important sert a forcer l'application d'une regle CSS . La regle en question sera alors considirer comme 
+prioritaire sur toutes les autres déclaration et le style sera aplliquer a l'élément concérné */
+
+}
+
+#projects .card img{
+  
+    height: 100%;
+}
+
+/* COMPANY */
+
+#company .card{
+
+  border: none; 
+  /* enleve les bordures */
+}
+
+/* CONTACT */
+
+#contact select#inputState{
+
+   height: 45px;
+   box-sizing: border-box;
+
+}
+
+
+iframe{
+    /* iframe la carte google map */
+border: 5px solid #55595c;
+border-radius: 6px;
+
+}
+
+
+/* FOOTER */
+
+
+footer .fab{
+ font-size: 200%;
+}
+
+footer p{
+
+font-size: 120%;
+}
+
+
+footer a:hover i{
+
+   /* hover = surviole de la souris */
+
+   color: #df8a13;
+}
+
+.card h5.card-title{
+   overflow-y: hidden;
+}
+

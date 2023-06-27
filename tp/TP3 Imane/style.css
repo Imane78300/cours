@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2? family= Caveat+Brush & family= Cormorant+Garamond:wght@300 & family= Roboto:ital,wght@1,100 & display=swap' );
+ 
+html, body{ 
+    margin: 0; /* retrait du margin prédéfinit pour éviter les différences de résultats sur les navigateurs */
+    padding: 5; /* retrait du padding pour les mêmes raison */
+    font-family:'Caveat Brush' ; /* on deffinit la police caveat bruch que on a impirte*/
+    background-image: url(./img/woddPlank.jpg) no-repeat;
+    text-align: center;
+   
+}
+
+
+ .planche img{
+background-image: url(./img/woddPlank.jpg)no-repeat;
+width: 2000px;
+text-align: center;
+display: flex;
+height: 800px;
+}
+
+
+nav{
+    display: inline-block; /* pour changer le comportement de la nav et la placer à l'aider du display flex space between */
+}
+
+
+.triangle {
+   width: 0px;
+   height: 0px;
+   border-style: solid;
+   border-width: 0 100px 150px 100px;
+   border-color: transparent transparent #FF4532 transparent;
+   transform: rotate(0deg);
+   text-align: center;
+}
+
+header .cerf{
+background-image: url(./img/cerf.svg) no-repeat;
+height: 5px;
+margin: auto;
+display: flex;
+text-align: 0;
+margin-bottom:0%;
+padding :5%;
+}
+
+
+
+
+
+h1 span {/*header*/
+  font-size: 40px;
+  display: inline;
+  vertical-align: top;
+  position: relative;
+}
+
+h1 span:after {
+  /*header*/
+  top: 15px;
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+
+
+
+
+
+

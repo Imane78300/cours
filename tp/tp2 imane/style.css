@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2? family= Cormorant+Garamond:wght@300 & family= Roboto:ital,wght@1,100 & display=swap');
+
+body{
+
+    background-color: white;
+    height: 20%;
+    text-align: center;
+    margin: 1% auto;
+}
+
+
+hr {
+
+    width: 15%;
+}
+
+
+
+
+h2{
+height: 5%;
+margin: 0 auto;
+font-family: "Cormorant Garamond ";
+font-size: 10px;
+color: brown;
+
+}
+
+
+nav{/*
+margin: 0 auto;
+width: 5px;
+height: 10%;
+*/
+}
+ul{
+
+   list-style-type: none;
+   text-align: center;
+}
+
+li{
+
+display: inline;
+
+
+}
+
+a{
+margin: 0 auto;
+width: 5px;
+height: 5%;
+text-decoration: none;
+
+}
+
+ h3 {
+
+width: 40%;
+text-align: right;
+position: relative;
+right: 1%;
+
+}
+.b{
+text-align: right;
+width: 49%;
+position: relative;
+left: 20%;
+}
+
+/*
+section {
+texte aligne : right;
+position : relative;
+right : 10%
+float:left;
+margin : 50 px
+*/
+
+
+
+h3{
+
+    width: 40%;
+    text-align: right;
+    position: relative;
+    left: 1%;
+
+}
+
+
+
+
+
+
+.assiette{
+position: relative;
+left: 15%;
+
+
+}

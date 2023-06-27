@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2? family= Roboto:ital,wght@1,100 & display=swap');
+
+
+body{
+text-align: center;/* POUR ALLIGNER LE TEXTE*/
+background: white;/* pour la coleure du font*/
+margin: 10%  10% auto;/*   POUR LA MARGE INTERIEURE*/
+
+}
+
+
+.container {
+    margin: 0 auto;
+    align-items: center;
+    border: 300px solid;
+    background: #29347B; /*  coleur du font de page*/
+    color: white;
+
+}
+
+
+figure{
+display: inline-block;/* POUR ALLIGNER LES PHOTOS*/
+}
+
+
+
+
+
