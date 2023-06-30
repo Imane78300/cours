@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cormorant+Garamond:wght@300&family=Roboto:ital,wght@1,100&display=swap');
+
+
+*{
+     box-sizing: border-box;
+}
+
+a{
+     font-size: 2rem;
+     text-align: center;
+     text-decoration: none;
+
+}
+
+
+.container{
+
+ color: white;
+background:rgb(171,169, 195);
+}
+
+.container img{
+
+    display: flex;
+    margin: 10%;
+    height: 300px;
+    margin:50px auto ;
+ 
+  
+}
+
+
+footer ul li{
+
+background:rgb(39,93, 173);
+height: 20px;
+
+
+}
+
+ ul li {
+color: white;
+list-style: none;
+
+
+}
+
+span{
+
+font-size: large;
+}
+
+
