@@ -1,0 +1,161 @@
+.top{
+  display: flex;
+  /* pour tout alligner */
+  justify-content: space-between;
+  /* faire des espaces entre les div */
+}
+
+.middle img{
+width: 250px;
+}
+
+.left .btn{
+  width: 90px;
+  /* largeur */
+  height: 40px;
+  /* hauteur */
+
+border-radius: 30px;
+/* pour la decoration  */
+
+border: 1px solid gray;
+
+background: transparent;
+/*  pour prendre la coleur de la page */
+font-weight: bold;
+}
+
+.right a{
+
+text-decoration: none;
+/* pour enlever le soulignements */
+
+color: black;
+
+border-right: 1px solid gray ;
+/* pour mettre  le petit trait à côter du jornal */
+
+padding-right: 5px;
+/* pour gfaire le petite espace entre le journal et le trait */
+font-weight: bold;
+}
+
+.right .connexion{
+border-radius: 30px ;
+border: 1px solid gray;
+width: 125px;
+height: 40px;
+background: transparent;
+font-weight: bold;
+/* pour mettre en gras */
+
+}
+
+.right .abonner{
+
+border-radius: 30px ;
+width: 125px;
+height: 40px;
+background-color: gold;
+
+border: none;
+/* pour enlever les bordures */
+
+font-weight: bold;
+
+}
+
+.right{
+
+  justify-content: space-around;
+}
+
+.navbar ul{
+
+   display: flex;
+   /* pour les metre sur une ligne */
+   list-style-type: none;
+
+   justify-content: center;
+   /* pour les centrer  */
+
+   border-top: 1px solid grey;
+   border-bottom: 1px solid grey;
+
+    font-weight: bold;
+  /* pour mettre en gras */
+}
+
+
+.navbar a{
+
+   text-decoration: none;
+   /* pour enlever le soulignement */
+   color: black;
+
+   font-size: 20px;
+
+   margin: 10px;
+   /* pour mettre de l'espace  */
+
+ 
+   /* pour mettre en gras */
+}
+
+
+.navbar li{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.fa-regular.fa-futbol{
+
+color: blue;
+}
+
+.navbar ul li:nth-of-type(3){
+    border-right: 1px solid grey;
+}
+.navbar ul li:nth-of-type(12){
+    border-right: 1px solid grey;
+}
+.navbar ul li:nth-child(13) a{
+   color: grey;
+}
+.navbar ul li:nth-child(14) a{
+    color: grey;
+}
+
+nav a:hover{
+    color: rgb(2, 33, 155);
+}
+
+.navbar ul li:nth-child(13) a:hover {
+    color: rgb(2, 33, 155);
+}
+
+.navbar ul li:nth-child(14) a:hover {
+    color: rgb(2, 33, 155);
+}
+
+
+
+.soldes{
+
+ display: flex;
+ justify-content: center;
+ /* pour center l image  */
+
+}
+
+
+
+.soldes img{
+
+height: 500px;
+width: 1000px;
+
+
+}

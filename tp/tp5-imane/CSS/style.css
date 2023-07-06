@@ -1,0 +1,74 @@
+body{
+  margin: 0;
+}
+header{
+  background: gray;
+  margin: 0 ;
+  padding: 0%;
+  font-size:50%;
+  color: white;
+
+}
+
+.container1 h1{
+ float: left;
+ margin: 0;
+
+}
+
+ h2{
+ text-align: center;
+ margin: 0;
+}
+
+
+.container1 h3{
+text-align: right;
+margin: 0;
+
+}
+
+nav{
+  background: #D3D3D3;
+margin: 0;
+
+}
+
+#devis{
+text-align:right;
+  width: 80%;
+
+}
+
+#moncompte{
+
+text-align:right ;
+width: 90%;
+
+}
+
+
+#conseils{
+text-align: center;
+width: 150%;
+
+
+}
+
+#panier{
+text-align: right;
+width: 100%;
+}
+
+
+#carrelage3{
+
+text-align: right;
+height: 20px;
+width: 100%;
+}
+
+.contanir3{
+
+float:right;
+}
