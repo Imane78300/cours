@@ -1,0 +1,24 @@
+
+ <!-- <app-mon-premier-component></app-mon-premier-component> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>liste</h2>
+
+            <ul class="list-group">
+                <app-mon-premier-component *ngFor ="let element of presenceTab"
+                                            [persoName]="element.name"
+                                            [persoStatus]="element.status"></app-mon-premier-component>
+
+
+
+
+            </ul>
+                  <input type="checkbox" [checked]='isAuth' (click)="onClique()">utilisateur connecté
+        </div>
+
+    </div>
+
+</div>
