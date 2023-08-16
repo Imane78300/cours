@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable</title>
+    <title>Predifinis</title>
     <style>
         /* Navbar container */
 .navbar {
@@ -130,8 +128,7 @@
  </div>
 
 
-
- <div class="dropdown">
+<div class="dropdown">
     <button class="dropbtn">Fonction
       <i class="fa fa-caret-down"></i>
     </button>
@@ -142,6 +139,9 @@
 </div>
 
  </div>
+
+
+
 <div class="dropdown">
     <button class="dropbtn">porté des variable 
       <i class="fa fa-caret-down"></i>
@@ -151,6 +151,11 @@
 </div>
 
  </div>
+
+
+
+
+
   </div>
 </div>
     </div>
@@ -159,68 +164,66 @@
 
 <?php
 
-/* une variable est un espace mémoire (ou plus simplement une boite) dans lequel on stocke une information (une donnée). Cette information
- étant récupérable ensuite à tout moment dans notre code
-float= nombre avec cergule */
+// les fonction prédefinies sont celles qui sont déja codées, mises à notre disposition par PHP (par exemple isset()  )
+
+// 01- strlen() et iconv_strlen()
+/* les deux permettent se tester le longueur d'une cahien de caractéres (pour que par exemple on n'entre pas 20 caractére pour un pseudo, 
+on limiter au maximum   20)   les espaces sont comptés */
 
 
-// les informations stockées dedans peuvent être des string, integer, float, requêtes sql, array, boolean
+$phrase = " Lorem ipsum color sit amet consectetur adipisicing elit .  Enim , totam . "; 
 
-// mauvaises syntaxes
+// le resultat trouvé sera 75
 
-// commencer par un chiffre, $ + chiffre : $5
-// commencer par des caractères spéciaux : $-, $_, $@ etc..
-// cela fonctionne, mais conventionnellement ce n'est pas autorisé ni admis
-
-?>
+   echo iconv_strlen($phrase) ."<br>"; // iconv_strlen compte seulement les caractéres affichés
+   echo strlen($phrase) ."<br>";      //  strlen utulise le nombre d'octet utilisé par chaque  caractére 
 
 
-<?php
+   $phrase2 = "étés";
 
-// une variable est un espace mémoire ( ou plus simplement une boîte) dans lequel on stokxe une information (une donnée). Cette information étant récupérable ensuite à tout  moment dans notre code
-// les information stokées dedans peuvent être des chaines de caractère (string, nombre entier (integer) float (nombre decimaal), des requetes sql, des tableaux (un array est ube sorte de variable) ou encore un booléen (on stocke ou TRUE ou FALSE dans la variable)
-
-// 01- utilité de la variable 
-
-echo "<p>Bonjour Fred</p>";
-echo "<p>Comment vas-tu Fred</p>";
-echo "<h2>Affichage de profil de Fred</h2>";
-
-$prenom = "Fred";
-
-echo "<p>Bonjour $prenom</p>";
-echo "<p>Comment vas-tu $prenom</p>";
-echo "<h2>Affichage de profil de $prenom</h2>";
-
-// 02 regles concernant les variables
-// pour les déclarer, le doit écroire la lettre $
-// si je mets un chiffre après le signe $, je génère une erreur php (je ne peux pas nommer $9prénom)
-// Par convention, on demande à ne pas débuter leur nom par un - ou tout autre caractère Spécial @ # etc ...
-// toujour par convention, on ne met pas d'accent pour le nom de la variable. On n'écrit pas $prénom
-
-// par convention, si le nom de la variable est composé, on doit l'écrire ou en cemelCase ($monPrenom) ou en snakecase ($mon_prenom). On n'écrit pas $monprenom ou $mon prenom
-// par convention, on donne un nom logique, pertinent, qui parle à une variable.
-$couleur = "rouge";
-// attention, le  nom d'une variable est sensible à le casse
-echo $couleur . "<br>";
+ echo iconv_strlen($phrase2) ."<br>";// il compte que les lettre 
+ echo strlen($phrase2) ."<br>"; //  il compte les lettre plus les accentees
 
 
-// la valleur affectée à une variable peut être modifiée. C'est la même variable mais avec une valeur différente
-$couleur = "bleu";
-  echo $couleur . "<br>";
 
-  // 03 type de variables
-  $prenom = "Fred";
-  echo gettype( $prenom) . "<br>";
-
-  $nombreEntier = 32;
-  echo gettype($nombreEntier) . "<br>";
-
-  $nombreDecimal = 5.4;
-  echo gettype($nombreDecimal) . "<br>";//pour des raisons historiques, "double" est retournée lorsqu'une valeur de type float est fournie, et non "float""
-
-  $booleen = TRUE;
-  echo gettype( $booleen) . "<br>";
+//  02- substring
+// fonction prédéfinie qui permet de sélectionner une chaine de caractéres à des endrois précis et supprimés le reste
+// elle prend 3 paramétres . La chaine à décuper, le point d edépart et le point d'arrivée
+//  je veux conserver la premiére moitié de ma chaine de caractéres
 
 
-  ?>
+
+   $phrase ="lepolespoissyimane";
+
+
+  echo substr($phrase, 0,18)."<br>";
+//   ça commence toujoure par 0 comme premier caractére 
+
+
+ echo substr($phrase, 0,-4) ."<br>"; // ici substr prendra tous les caractére sauf 4 derniers
+
+
+//  03- date()
+// celle ci permet de récupérer l'anné en cours 
+
+echo date("d/m/y"). "<br>";
+
+echo "&copy;" .date('Y') . "imane"  . "<br>";
+
+// echo date("D-M-Y"); ou echo date ("D/M/Y");
+
+
+
+// 04- empty, contrairement à isset , la fonction vérifier si la variable (qui existe ) contient une valeur 
+
+//    $phrase3= ""; La variable n'a pas de contanu
+      $phrase3= "  ";  // La variable à raçu du contenu (un espace)
+
+if(empty($phrase3)){
+      echo " La variable n'a pas de contenu <br>";
+}else{
+      echo " La variable à reçu  de contenu";
+
+}
+
+

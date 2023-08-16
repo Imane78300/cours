@@ -1,80 +1,292 @@
-<?php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <style>
+        /* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
 
-// syntaxe au dessus pour ouvrire un passage php 
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Affichage
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../01-affichage/instructions.php">instructions</a>
+    </div>
+  </div>
+ <div class="dropdown">
+    <button class="dropbtn">Variables et constantes
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../02-variables et costante/variable.php">Variables</a>
+      <a href="../02-variables et costante/constantes.php">Constantes</a>
+</div>
+ </div>
+
+<div class="dropdown">
+    <button class="dropbtn">concatenation et synthaxe
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../03-concatenation_et _syntaxe/concatenation.php">concatenation</a>
+      <a href="../03-concatenation_et _syntaxe/syntaxes_quotes.php">syntaxes</a>
+</div>
+ </div>
+<div class="dropdown">
+    <button class="dropbtn">opérateur-arithmetique
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../04-opérateur-arithemtique/arithmetique.php">arithmetique</a>
+      <a href="../04-opérateur-arithemtique/opérateur-affectation.php">opérateur</a>
+</div>
+   </div>
+
+
+<div class="dropdown">
+    <button class="dropbtn">condition switch if-else
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../05-conditions/switch.php">switch</a>
+      <a href="../05-conditions/if-else.php">if-else.php</a>
+</div>
+
+ </div>
+
+
+<div class="dropdown">
+    <button class="dropbtn">Fonction
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../06-fonctions/exo-tva.php">exo-tva</a>
+      <a href="../06-fonctions/predefinies.php">predefinis</a>
+      <a href="../06-fonctions/utilisateur.php">utilisateur</a>
+</div>
+
+ </div>
+
+
+<div class="dropdown">
+    <button class="dropbtn">porté des variable 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../07-porté-des-variables/global-local.php">global et local</a>
+</div>
+
+ </div>
+
+<div class="dropdown">
+    <button class="dropbtn">boucle
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../08-boucles/boucle.php">boucle</a>
+</div>
+
+ </div>
+
+
+
+
+  </div>
+</div>
+    </div>
+
+    <?php
+
+// syntaxe au dessus pour ouvirir un passage php
 // il est conseillé de le laisser ouvert si on ne fait que du traitement PHP.
-// c'est plus facil pour debug
-// on peut aussi le fermer mais plus difficlle à corriger en cas de probléme
+// c'est plus facile pour debug
+// on peut aussi le fermer mais plus difficile à corriger en cas de problème
 
 
+// instruction d'affichage très souvent utilisée
 
+echo "Bonjour, Je suis Delia. <br>";
 
-
-// instruction d'affichage trés souvent utilisé 
-
-
-
-echo "Bonjour, Je suis Imane. <br>";
-
-
-// le ; est un fin d'instuction , il est obligatoir pour signifier cet ordre au navigateur , sinon erreur php 
-// une secobde instruction est possibme en PHP avec l emot print, mais il n'est pas  trées peu utilisé , dans paratiquement aucun script ou tutoriel 
+// le ; est un fin d'instruction, il est obligatoire pour signifier cet ordre au navigateur, sinon erreur php
+// une secobde instruction est possibme en PHP avec le mot print, mais il n'est que très peu utilisé, dans pratiquement aucun script ou tutoriel
 
 ?>
 
-<!--  Passage contracté en PHP -->
-<!-- il necessite pas d'echo, il est implicite, il ne sert que pour afficher -->
+<!-- Passage contracaté en PHP -->
+<!--  il necessite pas d'echo, il est implicite, il ne sert que pour afficher -->
 
+<?= "Nous sommes lundi <br>" ?>
 
-<?= "Nous somme lundi  <br>" ?>   <!-- le = segnifie echo ,c'est le passage contracté -->
+<?php 
+// Affichage non conventionnel (print_r et var_dump)
+// l'affichage non conventionnel ne sert que durant la période de développement du site.Il est utile pour le développeur, pas pour le visiteur du site.
+// !!!!!!!! le jour où le site est mis en ligne, il faut mettre tous les print_r et var_dump en commentaire ou les supprimer !!!!!!!!!
 
+// je déclare un variable pour ensuite la tester
+$prenom='Delia';
 
-<?php
-
-// Affichage non conventionnell (print_r et var -dump)
-// l'affichage conventionnellee ne sert que durant la période de développement du site. Il est utile pour le développeur , pas pour le visiteur du site .
-
-
-// le jour ou le site est mis en ligne, il faut mettre tou sles print_r et var_dump en commentaire oou les supprimer !!!!!!!!!!!!
-
-
-// je déclare un variable pour ensuite la tester 
-
-$prenom='Imane';
-
-// la balise <pre></pre> qui qui entoure le print_r est utule pour mieux lire les information que l'on veut récupérer
-
-
+//la balise <pre></pre> qui entoure le print_r est utile pour mieux lire les informations que l'on veut récupérer 
 echo "<pre>";
-
-     print_r(gettype($prenom));
-
+    print_r(gettype($prenom));
 echo "</pre>";
 
-// les cOmmentaire en php 
+// les commentaire en php
 
-// 1er type de commentaire 
+// 1er type de commentaire
 
 /*
-2eme type sur plusieur lignes
-*/ 
+2éme type de commentaire sur plusiseurs lignes
+*/
 
-#3éme type de commentaire 
+# 3éme type de commentaire
 
-// mix PHP et  HTML 
-
+// mix PHP et HTML
 
 echo '<h1> Salut </h1>';
 echo 'Nous somme <strong>lundi</strong><br>';
-echo '<div class="heure">l\'ecol commence a 9h00 <br></div>';
+echo '<div class="heure">L\'ecole commence a 9h00<br></div>';
 
 ?>
 
-<!-- le syntaxes  en sessus ne sont pas tollerer , meme si elles fonctionnets. Elles alternant trop les passages d'une langague à l'autre 
-C'est dit code "Sale  -->
+<!-- les syntaxes en dessus ne sont pas tolérées, même si elles fonctionnents. Elles alternant trop les passages d'une langage à l'autre.C'est dit code "sale" -->
+
+<h1><?php echo "Bonjour"; ?></h1>
+<?php echo "Nous sommes " ?> <strong>lundi</strong> <?php echo " et il est 15h"; ?>
+
+<!-- Le code PHP n'est pas visible dans le code source de la page. C'est la preuve que le navigateur ne peut pas gérér ce langage, seulement les langages du front -->
+</body>
 
 
-<h1><?php echo "Bonjour" ;?></h1>
-<?php echo "Nous somme" ?> <strong>lundi</strong> <?php echo "est il est 15h "; ?>
+<?php
 
-<!-- le code php n'est pas visble dans le code source de la page c'est la preuve que le navigateur ne peut pas gère ce language 
-seulement le language front -->
+// syntaxe au dessus pour ouvirir un passage php
+// il est conseillé de le laisser ouvert si on ne fait que du traitement PHP.
+// c'est plus facile pour debug
+// on peut aussi le fermer mais plus difficile à corriger en cas de problème
+
+
+// instruction d'affichage très souvent utilisée
+
+echo "Bonjour, Je suis Delia. <br>";
+
+// le ; est un fin d'instruction, il est obligatoire pour signifier cet ordre au navigateur, sinon erreur php
+// une secobde instruction est possibme en PHP avec le mot print, mais il n'est que très peu utilisé, dans pratiquement aucun script ou tutoriel
+
+?>
+
+<!-- Passage contracaté en PHP -->
+<!--  il necessite pas d'echo, il est implicite, il ne sert que pour afficher -->
+
+<?= "Nous sommes lundi <br>" ?>
+
+<?php 
+// Affichage non conventionnel (print_r et var_dump)
+// l'affichage non conventionnel ne sert que durant la période de développement du site.Il est utile pour le développeur, pas pour le visiteur du site.
+// !!!!!!!! le jour où le site est mis en ligne, il faut mettre tous les print_r et var_dump en commentaire ou les supprimer !!!!!!!!!
+
+// je déclare un variable pour ensuite la tester
+$prenom='Delia';
+
+//la balise <pre></pre> qui entoure le print_r est utile pour mieux lire les informations que l'on veut récupérer 
+echo "<pre>";
+    print_r(gettype($prenom));
+echo "</pre>";
+
+// les commentaire en php
+
+// 1er type de commentaire
+
+/*
+2éme type de commentaire sur plusiseurs lignes
+*/
+
+# 3éme type de commentaire
+
+// mix PHP et HTML
+
+echo '<h1> Salut </h1>';
+echo 'Nous somme <strong>lundi</strong><br>';
+echo '<div class="heure">L\'ecole commence a 9h00<br></div>';
+
+?>
+
+<!-- les syntaxes en dessus ne sont pas tolérées, même si elles fonctionnents. Elles alternant trop les passages d'une langage à l'autre.C'est dit code "sale" -->
+
+<h1><?php echo "Bonjour"; ?></h1>
+<?php echo "Nous sommes " ?> <strong>lundi</strong> <?php echo " et il est 15h"; ?>
+
+<!-- Le code PHP n'est pas visible dans le code source de la page. C'est la preuve que le navigateur ne peut pas gérér ce langage, seulement les langages du front -->
+</html>

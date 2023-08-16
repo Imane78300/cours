@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable</title>
+    <title>Boucles</title>
     <style>
         /* Navbar container */
 .navbar {
@@ -130,8 +128,7 @@
  </div>
 
 
-
- <div class="dropdown">
+<div class="dropdown">
     <button class="dropbtn">Fonction
       <i class="fa fa-caret-down"></i>
     </button>
@@ -142,6 +139,8 @@
 </div>
 
  </div>
+
+
 <div class="dropdown">
     <button class="dropbtn">porté des variable 
       <i class="fa fa-caret-down"></i>
@@ -151,76 +150,112 @@
 </div>
 
  </div>
+
+<div class="dropdown">
+    <button class="dropbtn">boucle
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../08-boucles/boucle.php">boucle</a>
+</div>
+
+ </div>
   </div>
 </div>
     </div>
 </html>
 
-
 <?php
 
-/* une variable est un espace mémoire (ou plus simplement une boite) dans lequel on stocke une information (une donnée). Cette information
- étant récupérable ensuite à tout moment dans notre code
-float= nombre avec cergule */
+
+// j'initialise ma varibale $i en lui affectant la valeur 0
+// souvent on initialllise par un 0 car le permier indice d'un tableau est l'indice 0 (les boucles servent beacoup à travailler sur les tableaux )
+$i=0;
+
+/*
+ Dans la parenthése on donne la condition pour que la boucle puisse fonctionner (tant que la valeur de  $i ne dépasse pas 10)
+       while($i <= 10){
+        tant que la condition est respecter , on exécute ce qui est dans aprés echo)
+        echo "Tour de boucle " . $i  ."---". '<br>';
+        incrémentation de $i
+        $i++
+ }
+
+*/ 
 
 
-// les informations stockées dedans peuvent être des string, integer, float, requêtes sql, array, boolean
+  while($i <= 10){
+      if($i  == 10 ){
+      echo "Tour de boucle " .$i . '<br>';
+      }else{
+      echo "Tour de boucle " .$i ."---". '<br>';
+      
+      }
+      $i++;
+  }
 
-// mauvaises syntaxes
+  
+//  02 -do  while() pas trop utiliser , presque jamais 
 
-// commencer par un chiffre, $ + chiffre : $5
-// commencer par des caractères spéciaux : $-, $_, $@ etc..
-// cela fonctionne, mais conventionnellement ce n'est pas autorisé ni admis
+
+ $i=0;
+
+
+ do{
+  echo "Tour de boucle " . $i . " *** " ."<br>" ;
+   $i += 2;
+}while($i <= 10);
+
+
+// 03-boucle for()
+  echo '<br>';
+
+
+  for($i=0;$i <10; $i++){
+
+    echo "ligne" .$i . '<br>';
+
+  }
+
+// 03 bis utilisation d'une for pour créer un sélecteur 
+
+echo "<br>";
+   echo "<form>";
+      echo "<select>";
+          echo "<option selected>Sélectionnez l'année</option>";
+              for($annee = date('Y'); $annee>= date('Y')-100 ;$annee--){
+                   echo "<option>". $annee."</option>";
+                       }  
+                           echo"</select>";
+
+echo"</form>";
+
+
+
+
+// 04- double for imbriquée
+ 
+  echo '<br>';
+
+    echo"<table border='1' style='border-collapse:collapse'>";
+        echo "<tr>";
+              for($i= 1 ; $i <= 10; $i++){
+                    echo "<td> $i </td>";
+                      }
+                        echo "</tr>";
+                              echo "</table>";
+             
+                echo "</br>";
+
+echo"<table border='1' style='border-collapse:collapse'>";
+          for($ligne= 0; $ligne <= 9; $ligne++){
+              echo"<tr>";
+            for($cellule = 0 ; $cellule <=9 ; $cellule++){
+              echo "<td>".(10*$ligne+$cellule) +1 ."</td>";
+            }
+            //  si on a pas mit +1 il aurait commencer par 0 effet en ragoute 10 a chaque chiffre 
+              echo"</tr>";
+          
+          }
 
 ?>
-
-
-<?php
-
-// une variable est un espace mémoire ( ou plus simplement une boîte) dans lequel on stokxe une information (une donnée). Cette information étant récupérable ensuite à tout  moment dans notre code
-// les information stokées dedans peuvent être des chaines de caractère (string, nombre entier (integer) float (nombre decimaal), des requetes sql, des tableaux (un array est ube sorte de variable) ou encore un booléen (on stocke ou TRUE ou FALSE dans la variable)
-
-// 01- utilité de la variable 
-
-echo "<p>Bonjour Fred</p>";
-echo "<p>Comment vas-tu Fred</p>";
-echo "<h2>Affichage de profil de Fred</h2>";
-
-$prenom = "Fred";
-
-echo "<p>Bonjour $prenom</p>";
-echo "<p>Comment vas-tu $prenom</p>";
-echo "<h2>Affichage de profil de $prenom</h2>";
-
-// 02 regles concernant les variables
-// pour les déclarer, le doit écroire la lettre $
-// si je mets un chiffre après le signe $, je génère une erreur php (je ne peux pas nommer $9prénom)
-// Par convention, on demande à ne pas débuter leur nom par un - ou tout autre caractère Spécial @ # etc ...
-// toujour par convention, on ne met pas d'accent pour le nom de la variable. On n'écrit pas $prénom
-
-// par convention, si le nom de la variable est composé, on doit l'écrire ou en cemelCase ($monPrenom) ou en snakecase ($mon_prenom). On n'écrit pas $monprenom ou $mon prenom
-// par convention, on donne un nom logique, pertinent, qui parle à une variable.
-$couleur = "rouge";
-// attention, le  nom d'une variable est sensible à le casse
-echo $couleur . "<br>";
-
-
-// la valleur affectée à une variable peut être modifiée. C'est la même variable mais avec une valeur différente
-$couleur = "bleu";
-  echo $couleur . "<br>";
-
-  // 03 type de variables
-  $prenom = "Fred";
-  echo gettype( $prenom) . "<br>";
-
-  $nombreEntier = 32;
-  echo gettype($nombreEntier) . "<br>";
-
-  $nombreDecimal = 5.4;
-  echo gettype($nombreDecimal) . "<br>";//pour des raisons historiques, "double" est retournée lorsqu'une valeur de type float est fournie, et non "float""
-
-  $booleen = TRUE;
-  echo gettype( $booleen) . "<br>";
-
-
-  ?>

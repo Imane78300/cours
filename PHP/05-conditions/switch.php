@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable</title>
+    <title>switch</title>
     <style>
         /* Navbar container */
 .navbar {
@@ -129,9 +129,7 @@
 
  </div>
 
-
-
- <div class="dropdown">
+<div class="dropdown">
     <button class="dropbtn">Fonction
       <i class="fa fa-caret-down"></i>
     </button>
@@ -142,6 +140,7 @@
 </div>
 
  </div>
+ 
 <div class="dropdown">
     <button class="dropbtn">porté des variable 
       <i class="fa fa-caret-down"></i>
@@ -151,76 +150,53 @@
 </div>
 
  </div>
+
+
+
   </div>
 </div>
     </div>
-</html>
 
-
+    </html>
 <?php
 
-/* une variable est un espace mémoire (ou plus simplement une boite) dans lequel on stocke une information (une donnée). Cette information
- étant récupérable ensuite à tout moment dans notre code
-float= nombre avec cergule */
+
+$couleur = "bleu";
+
+// je déclare uen variable en lui affectant une valeur 
 
 
-// les informations stockées dedans peuvent être des string, integer, float, requêtes sql, array, boolean
+switch($couleur){
+//  elle débute avec une case qui test une valeur
+  case "vert";
 
-// mauvaises syntaxes
+    echo "la couleur est bien vert <br>-  ";
 
-// commencer par un chiffre, $ + chiffre : $5
-// commencer par des caractères spéciaux : $-, $_, $@ etc..
-// cela fonctionne, mais conventionnellement ce n'est pas autorisé ni admis
+   break;
+//  un break pour passer au case suivant si celui ci n'est pas verifier 
+// le break doit être cofé pour chaque case. Sinon , même si le case est vérifié, il va aller tester le code suivant 
+
+   case " bleu":
+     echo "La couleur est bien bleu <br> ";
+   break;
+   case "rouge":
+     echo "la couleur est bien rouge  ";
+   break;
+   default:
+    echo "La couleur est bien bonne"; 
+
+}
+
+// le break pour arrêter la boucle 
+
+// code la même en if/elseif 
+
+if($couleur == "Jaune"){
+    echo "la couleur est bien jaune ";
+}elseif($couleur == "rouge"){
+     echo "la couleur est bien rouge";
+}elseif($couleur == "bleu"){
+    echo "la couleur est bien bleu";
+}
 
 ?>
-
-
-<?php
-
-// une variable est un espace mémoire ( ou plus simplement une boîte) dans lequel on stokxe une information (une donnée). Cette information étant récupérable ensuite à tout  moment dans notre code
-// les information stokées dedans peuvent être des chaines de caractère (string, nombre entier (integer) float (nombre decimaal), des requetes sql, des tableaux (un array est ube sorte de variable) ou encore un booléen (on stocke ou TRUE ou FALSE dans la variable)
-
-// 01- utilité de la variable 
-
-echo "<p>Bonjour Fred</p>";
-echo "<p>Comment vas-tu Fred</p>";
-echo "<h2>Affichage de profil de Fred</h2>";
-
-$prenom = "Fred";
-
-echo "<p>Bonjour $prenom</p>";
-echo "<p>Comment vas-tu $prenom</p>";
-echo "<h2>Affichage de profil de $prenom</h2>";
-
-// 02 regles concernant les variables
-// pour les déclarer, le doit écroire la lettre $
-// si je mets un chiffre après le signe $, je génère une erreur php (je ne peux pas nommer $9prénom)
-// Par convention, on demande à ne pas débuter leur nom par un - ou tout autre caractère Spécial @ # etc ...
-// toujour par convention, on ne met pas d'accent pour le nom de la variable. On n'écrit pas $prénom
-
-// par convention, si le nom de la variable est composé, on doit l'écrire ou en cemelCase ($monPrenom) ou en snakecase ($mon_prenom). On n'écrit pas $monprenom ou $mon prenom
-// par convention, on donne un nom logique, pertinent, qui parle à une variable.
-$couleur = "rouge";
-// attention, le  nom d'une variable est sensible à le casse
-echo $couleur . "<br>";
-
-
-// la valleur affectée à une variable peut être modifiée. C'est la même variable mais avec une valeur différente
-$couleur = "bleu";
-  echo $couleur . "<br>";
-
-  // 03 type de variables
-  $prenom = "Fred";
-  echo gettype( $prenom) . "<br>";
-
-  $nombreEntier = 32;
-  echo gettype($nombreEntier) . "<br>";
-
-  $nombreDecimal = 5.4;
-  echo gettype($nombreDecimal) . "<br>";//pour des raisons historiques, "double" est retournée lorsqu'une valeur de type float est fournie, et non "float""
-
-  $booleen = TRUE;
-  echo gettype( $booleen) . "<br>";
-
-
-  ?>

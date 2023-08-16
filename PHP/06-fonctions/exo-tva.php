@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable</title>
+    <title>exo-tva</title>
     <style>
         /* Navbar container */
 .navbar {
@@ -130,8 +128,7 @@
  </div>
 
 
-
- <div class="dropdown">
+<div class="dropdown">
     <button class="dropbtn">Fonction
       <i class="fa fa-caret-down"></i>
     </button>
@@ -142,6 +139,8 @@
 </div>
 
  </div>
+
+
 <div class="dropdown">
     <button class="dropbtn">porté des variable 
       <i class="fa fa-caret-down"></i>
@@ -151,76 +150,83 @@
 </div>
 
  </div>
+
   </div>
 </div>
     </div>
 </html>
 
 
-<?php
-
-/* une variable est un espace mémoire (ou plus simplement une boite) dans lequel on stocke une information (une donnée). Cette information
- étant récupérable ensuite à tout moment dans notre code
-float= nombre avec cergule */
-
-
-// les informations stockées dedans peuvent être des string, integer, float, requêtes sql, array, boolean
-
-// mauvaises syntaxes
-
-// commencer par un chiffre, $ + chiffre : $5
-// commencer par des caractères spéciaux : $-, $_, $@ etc..
-// cela fonctionne, mais conventionnellement ce n'est pas autorisé ni admis
-
-?>
-
 
 <?php
 
-// une variable est un espace mémoire ( ou plus simplement une boîte) dans lequel on stokxe une information (une donnée). Cette information étant récupérable ensuite à tout  moment dans notre code
-// les information stokées dedans peuvent être des chaines de caractère (string, nombre entier (integer) float (nombre decimaal), des requetes sql, des tableaux (un array est ube sorte de variable) ou encore un booléen (on stocke ou TRUE ou FALSE dans la variable)
-
-// 01- utilité de la variable 
-
-echo "<p>Bonjour Fred</p>";
-echo "<p>Comment vas-tu Fred</p>";
-echo "<h2>Affichage de profil de Fred</h2>";
-
-$prenom = "Fred";
-
-echo "<p>Bonjour $prenom</p>";
-echo "<p>Comment vas-tu $prenom</p>";
-echo "<h2>Affichage de profil de $prenom</h2>";
-
-// 02 regles concernant les variables
-// pour les déclarer, le doit écroire la lettre $
-// si je mets un chiffre après le signe $, je génère une erreur php (je ne peux pas nommer $9prénom)
-// Par convention, on demande à ne pas débuter leur nom par un - ou tout autre caractère Spécial @ # etc ...
-// toujour par convention, on ne met pas d'accent pour le nom de la variable. On n'écrit pas $prénom
-
-// par convention, si le nom de la variable est composé, on doit l'écrire ou en cemelCase ($monPrenom) ou en snakecase ($mon_prenom). On n'écrit pas $monprenom ou $mon prenom
-// par convention, on donne un nom logique, pertinent, qui parle à une variable.
-$couleur = "rouge";
-// attention, le  nom d'une variable est sensible à le casse
-echo $couleur . "<br>";
+// exercice avec une fonction qui va calculer le TVA pour un pris HT 
 
 
-// la valleur affectée à une variable peut être modifiée. C'est la même variable mais avec une valeur différente
-$couleur = "bleu";
-  echo $couleur . "<br>";
-
-  // 03 type de variables
-  $prenom = "Fred";
-  echo gettype( $prenom) . "<br>";
-
-  $nombreEntier = 32;
-  echo gettype($nombreEntier) . "<br>";
-
-  $nombreDecimal = 5.4;
-  echo gettype($nombreDecimal) . "<br>";//pour des raisons historiques, "double" est retournée lorsqu'une valeur de type float est fournie, et non "float""
-
-  $booleen = TRUE;
-  echo gettype( $booleen) . "<br>";
+//  fonction qui n'attend pas parametre 
 
 
-  ?>
+   function calculTva(){
+        // return permet de conserver la mèmoire recupurable en suite dans notre code 
+        return 100*1.2 . '€ TTC ';
+  }
+
+  // j'execute e,n affichant le resultat
+  echo calculTva(). '<br>';
+
+
+/* ETAPE  1
+
+ elle devra recevoire le prix en argument, plus elle calculera le prix TTC 
+     Objectif: La  fonction est capable de calculer le prix TTC de n'importe quel chiffre et pas juste 100
+
+
+*/ 
+
+function calculTva2($prix){
+   return $prix *1.2 . '€ TTC';
+}
+
+
+echo calculTva2(500) . '<br>';
+
+// ETAPE 2 
+
+/*
+  La foction doit a present calculer le prix TTC des deux argument qu'on doit lui donner .
+  Le prix  hors tax et aussi quel taux de TVA appliquer au prix HT 
+
+*/ 
+
+
+function calculTva3($prix,$tva){
+    return $prix * $tva .'€ TTC';
+}
+
+echo calculTva3(500,1.055). '<br>' ;
+
+echo calculTva3(300,1.2). '<br>'; 
+//  en  peut changer la valeure du prix comme on veut
+
+// cette fonction on toujoure 2 argument saufe que c'est lui  concernant le taux TVA  va recevoir une valeur par défaut ($taux = 1.2)
+
+
+   function calculTva4($prix, $taux = 1.2){
+    // elle lultuplie le pricx par le taux
+      return $prix*$taux .'€ TTC' ;
+  
+  }
+
+
+  // au moment de l'exucution si je ne donne qu'un argument (100) alors ma foncion va lui appliquer le taux par defaut (1.2)
+
+    echo calculTva4(100) . '<br>' ;
+
+  /* si par contre je précise le prix mais auss l etaux (different de celui par defaut alors que ce dernier va ecraser du taux par defaut pour 
+  le remplacer (1.055) remplacer 1.2) */
+  
+    echo calculTva4(100,1.055) . '<br>' ;
+
+
+
+    
