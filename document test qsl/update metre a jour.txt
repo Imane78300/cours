@@ -1,0 +1,15 @@
+MariaDB [ma_base]>  UPDATE client SET prenom='Delia', ville='Poissy' WHERE id='1'
+    ->
+    ->
+    ->  UPDATE client SET prenom='Delia', ville='Poissy' WHERE id='1';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UPDATE client SET prenom='Delia', ville='Poissy' WHERE id='1'' at line 4
+MariaDB [ma_base]>  UPDATE client SET prenom='Delia', ville='Poissy' WHERE id='1';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [ma_base]> UPDATE client SET nom='Danciu', age='29' WHERE id='5';
+Query OK, 0 rows affected (0.000 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+MariaDB [ma_base]>
+

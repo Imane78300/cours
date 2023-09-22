@@ -1,0 +1,242 @@
+# mysql -u root --
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 265
+Server version: 10.4.24-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+MariaDB [(none)]> help
+
+General information about MariaDB can be found at
+http://mariadb.org
+
+List of all client commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+edit      (\e) Edit command with $EDITOR.
+ego       (\G) Send command to MariaDB server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to MariaDB server.
+help      (\h) Display this help.
+nopager   (\n) Disable pager, print to stdout.
+notee     (\t) Don't write into outfile.
+pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+
+For server side help, type 'help contents'
+
+MariaDB [(none)]> CREATE DATABASE jal78;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [jal78]> CREATE TABLE utilisateur
+    -> (    id INT PRIMARY KEY NOT NULL,    nom VARCHAR(100),    prenom VARCHAR(100),    email VARCHAR(255),    date_naissance DATE,    pays VARCHAR(255),    ville VARCHAR(255),    code_postal VARCHAR(5),    nombre_achat INT);
+
+MariaDB [jal78]> SELECT nom, prenom  FROM utilisateur;
+Empty set (0.000 sec)
+
+USE [jal78];
+
+
+MariaDB [jal78]> CREATE TABLE utilisateur
+    -> (    id INT PRIMARY KEY NOT NULL,    nom VARCHAR(100),    prenom VARCHAR(100),    email VARCHAR(255),    date_naissance DATE,    pays VARCHAR(255),    ville VARCHAR(255),    code_postal VARCHAR(5),    nombre_achat INT);
+Query OK, 0 rows affected (0.025 sec)
+
+
+MariaDB [jal78]> INSERT INTO client (nom, prenom, ville) VALUES  ('Pisola', 'Patrick’, 'Paris'),  ('Diallo', 'Alpha', 'Dunkerque'),  ('Don', 'Juan', 'Log Angeles'),  ('Igoudjil', 'Idir', 'Marseille');
+Query OK, 4 rows affected (0.002 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [jal78]> INSERT INTO client (id ,prenom, ville, age) VALUES  ('Rébecca', 'Armand', 'Saint-Didier-des-Bois', 24), ('Aimée', 'Hebert', 'Marigny-le-Châtel', 36), ('Marielle', 'Ribeiro', 'Maillères', 27), ('Hilaire', 'Savary', 'Conie-Molitard', 58);
+Query OK, 4 rows affected, 6 warnings (0.002 sec)
+Records: 4  Duplicates: 0  Warnings: 6
+
+MariaDB [jal78]> SELECT * FROM client;
++----+----------+---------+-----------------------+------+
+| id | nom      | prenom  | ville                 | age  |
++----+----------+---------+-----------------------+------+
+|  1 | Pisola   | Patrick | Paris                 | NULL |
+|  2 | Diallo   | Alpha   | Dunkerque             | NULL |
+|  3 | Don      | Juan    | Log Angeles           | NULL |
+|  4 | Igoudjil | Idir    | Marseille             | NULL |
+|  5 | NULL     | Armand  | Saint-Didier-des-Bois |   24 |
+|  6 | NULL     | Hebert  | Marigny-le-Ch?tel     |   36 |
+|  7 | NULL     | Ribeiro | Maill?res             |   27 |
+|  8 | NULL     | Savary  | Conie-Molitard        |   58 |
++----+----------+---------+-----------------------+------+
+8 rows in set (0.000 sec)
+
+MariaDB [jal78]> SELECT prenom FROM client
+    -> ;
++---------+
+| prenom  |
++---------+
+| Patrick |
+| Alpha   |
+| Juan    |
+| Idir    |
+| Armand  |
+| Hebert  |
+| Ribeiro |
+| Savary  |
++---------+
+8 rows in set (0.000 sec)
+
+MariaDB [jal78]> SELECT nom, prenom FROM client;
++----------+---------+
+| nom      | prenom  |
++----------+---------+
+| Pisola   | Patrick |
+| Diallo   | Alpha   |
+| Don      | Juan    |
+| Igoudjil | Idir    |
+| NULL     | Armand  |
+| NULL     | Hebert  |
+| NULL     | Ribeiro |
+| NULL     | Savary  |
++----------+---------+
+8 rows in set (0.001 sec)
+
+MariaDB [jal78]> UPDATE client SET prenom='Delia', ville='Poissy' WHERE id='5';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [jal78]>
+MariaDB [jal78]> SELECT * FROM client WHERE ville='Poissy';
++----+------+--------+--------+------+
+| id | nom  | prenom | ville  | age  |
++----+------+--------+--------+------+
+|  5 | NULL | Delia  | Poissy |   24 |
++----+------+--------+--------+------+
+1 row in set (0.001 sec)
+
+
+
+MariaDB [ma_base]> UPDATE client SET nom='Danciu', age='29' WHERE id='5';
+Query OK, 1 row affected (0.002 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [ma_base]> SELECT * FROM client;
++----+---------+----------+-------------------+------+
+| id | nom     | prenom   | ville             | age  |
++----+---------+----------+-------------------+------+
+|  5 | Danciu  | Delia    | Poissy            |   29 |
+|  6 | Hebert  | Aim?e    | Marigny-le-Ch?tel |   36 |
+|  7 | Ribeiro | Marielle | Maill?res         |   27 |
+|  8 | Savary  | Hilaire  | Conie-Molitard    |   58 |
++----+---------+----------+-------------------+------+
+4 rows in set (0.000 sec)
+
+
+MariaDB [jal78]> SELECT * FROM client WHERE age>25;
++----+------+---------+-------------------+------+
+| id | nom  | prenom  | ville             | age  |
++----+------+---------+-------------------+------+
+|  6 | NULL | Hebert  | Marigny-le-Ch?tel |   36 |
+|  7 | NULL | Ribeiro | Maill?res         |   27 |
+|  8 | NULL | Savary  | Conie-Molitard    |   58 |
++----+------+---------+-------------------+------+
+3 rows in set (0.000 sec)
+
+
+
+
+Opérateur 
+Description 
+
+= 
+Égale 
+
+<> 
+Pas égale 
+
+!= 
+Pas égale 
+
+> 
+Supérieur à 
+
+< 
+Inférieur à 
+
+>= 
+Supérieur ou égale à 
+
+<= 
+Inférieur ou égale à 
+
+IN 
+Liste de plusieurs valeurs possibles 
+
+BETWEEN 
+Valeur comprise dans un intervalle donnée (utile pour les nombres ou dates) 
+
+LIKE 
+Recherche en spécifiant le début, milieu ou fin d'un mot. 
+
+IS NULL 
+Valeur est nulle 
+
+IS NOT NULL 
+Valeur n'est pas nulle 
+
+
+
+MariaDB [jal78]> DELETE FROM client WHERE id='6';
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [jal78]> SELECT * FROM client;
++----+----------+---------+----------------+------+
+| id | nom      | prenom  | ville          | age  |
++----+----------+---------+----------------+------+
+|  1 | Pisola   | Patrick | Paris          | NULL |
+|  2 | Diallo   | Alpha   | Dunkerque      | NULL |
+|  3 | Don      | Juan    | Log Angeles    | NULL |
+|  4 | Igoudjil | Idir    | Marseille      | NULL |
+|  5 | NULL     | Delia   | Poissy         |   24 |
+|  7 | NULL     | Ribeiro | Maill?res      |   27 |
+|  8 | NULL     | Savary  | Conie-Molitard |   58 |
++----+----------+---------+----------------+------+
+7 rows in set (0.000 sec)
+
+
+
++----------+-----------+
+|Opérateur| Description|
++----------+-----------+
+|>		|Supérieur à|
+|<		|Inférieur à|
+|>=		|Supérieur ou égale à|
+|<=		|Inférieur ou égale à |
+|IN		|plusieurs valeurs |
+|BETWEEN	|comprise dans un intervalle donnée|
+|LIKE		|Recherche en spécifiant le début, milieu ou fin d'un mot.|
+|IS NULL	|Valeur est nulle|
+|IS NOT NULL	|Valeur n'est pas nulle| 
+|=		| egale à|
+|<>		|non egale à|
+
+
+
+
+CREATE = cree
+INSERT = inseré
+VALUE = valeur a inseré
+UPDATE = modifier
+SELECT = lire afficher voir
+DELETE = supression valeur
+FROM = lieu
+WHERE = condition ou l'id est par exemple

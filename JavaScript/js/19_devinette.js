@@ -6,7 +6,7 @@ var solution = Math.floor(Math.random() * 100) + 1 ;
 
 // la fonction (Math.floor) renvoie le plus grand entier qui est égal à un nombre 
 // la fonction ( Math.random )  renvoie un nombre  à  vergule superieur ou égal à 0 et inférieur à 1
-// dans la améthode Math.random 1 ne xeiste pas il est exclut il peut aller jusq'au 0.99999999999 mais pas 1 jamais 
+// dans la méthode Math.random 1 ne xeiste pas il est exclut il peut aller jusq'au 0.99999999999 mais pas 1 jamais 
 // 
 
 // TESTE ppour mieux vérifier le programme

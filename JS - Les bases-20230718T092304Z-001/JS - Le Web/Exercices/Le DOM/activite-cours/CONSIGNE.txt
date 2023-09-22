@@ -1,0 +1,116 @@
+// ====== ACTIVITÉ COURS =====
+
+-> Activité de groupe (par 2)
+
+=> PARTIE 1
+
+- Dessiner l'arbre du DOM de la page activite-cours.html (voir exemple: image-DOM)
+- Utilise un carré pour représenter les éléments HTML, comme <body> ou <p>. 
+- Utilise un rond pour representer le contenu textuel de la page. 
+(Les éléments contenant du texte peuvent seulement etre représenter par "#text")
+
+
+=> PARTIE 2
+Faites des recherches sur les sélecteurs JS
+- Faites une liste des principaux sélecteurs JS (il y en a 5 ! )
+- Ecrivez pour chacun d'eux leur fonction
+
+
+
+LES selecteurs javascript
+
+
+SELECTEUR  1 :
+
+=> document.getElementById("EN recupérer le  NOM d'une ID")
+ // => pour recupérer un id dans le doccument html 
+
+
+ ***************************************************************************************************
+
+SELECTEUR 2 : 
+
+=>  1 =  document.getElementsByTagName('SPAN');
+ 
+
+
+
+=> sert a recupérer tout les ( div, span , p , article , tableau .....) qui existe sur la page web 
+
+
+
+  Exemple : 
+
+  <div .container >
+<span> lorem</span>
+  </div>
+
+
+document.getElementsByTagName('span');
+
+
+********************************************************************************************************************************
+
+
+SELECTEUR 3 :
+
+=> document.getElementsByName('attribut-name');
+
+// => c'est le fet de rajouter un nom à  une balise que on doit recupurer avec le selecteur 
+
+   EXEMPLE :
+
+   <img  name = "imane"> 
+
+
+  document.getElementsByName('imane');
+
+
+ ***********************************************************************************************************************************************
+
+
+
+SELECTEUR 4 :
+
+ => document.querySelector('BODY > TABLE .MaClass');
+
+// comme en css en veut recupérer la class (.MaClass) qui appartien a la balise Table qui a un parents BODY
+
+
+      EXEMPLE :
+     
+       <body>
+        <Table class="MaClass" >
+        </Table>
+    
+       </body>
+
+         document.querySelector('BODY > TABLE .MaClass')
+
+
+************************************************************************************************************************************************
+
+
+SELECTEUR 5 :
+
+ document.querySelectorAll('BODY > TABLE .MaClass');
+
+//  
+
+
+
+
+
+
+
+
+
+=> PARTIE 3
+Compléter le code dans activite-cours.js
+Faites des recherches pour compléter vos connaissances
+
+
+NOTE : Un petit challenge, ça vous dit ? :-)
+
+Faites valider chaque étape avant de continuer la suivante afin 
+que ton équipe remporte la manche !

@@ -1,0 +1,12 @@
+1- créer un fichier pour le script php
+  - créer une requette SQL qui récupére toute la table PRODUIT
+  -(optionnel) afficher le résulat de la requete SQL avec un print_r
+
+
+2- afficher tous les produits de la tequete SQL à l'aide d'un foreach()
+  -le prix doit être calculé SI il y a une réduction
+  -la réduction doit être affiché SI il y en a une 
+  - l'image doit être visible
+
+
+  

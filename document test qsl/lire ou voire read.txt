@@ -1,0 +1,20 @@
+MariaDB [ma_base]> SELECT * FROM client;
++----+---------+----------+-----------------------+------+
+| id | nom     | prenom   | ville                 | age  |
++----+---------+----------+-----------------------+------+
+|  1 | Armand  | R?becca  | Saint-Didier-des-Bois |   24 |
+|  2 | Hebert  | Aim?e    | Marigny-le-Ch?tel     |   36 |
+|  3 | Ribeiro | Marielle | Maill?res             |   27 |
+|  4 | Savary  | Hilaire  | Conie-Molitard        |   58 |
++----+---------+----------+-----------------------+------+
+4 rows in set (0.000 sec)
+
+MariaDB [ma_base]> SELECT prenom FROM client;
++----------+
+| prenom   |
++----------+
+| R?becca  |
+| Aim?e    |
+| Marielle |
+| Hilaire  |
++----------+

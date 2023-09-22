@@ -1,0 +1,16 @@
+INSERT INTO bonbons (nom, saveur) VALUES ('dragibus', 'cola');
+INSERT INTO bonbons (nom, saveur) VALUES ('tagada', 'fraise');
+INSERT INTO bonbons (nom, saveur) VALUES ('bams', 'banane');
+INSERT INTO bonbons (nom, saveur) VALUES ('rotella', 'reglisse');
+INSERT INTO bonbons (nom, saveur) VALUES ('floppys', 'sucre');
+INSERT INTO bonbons (nom, saveur) VALUES ('rainbollows', 'marshmallow');
+INSERT INTO bonbons (nom, saveur) VALUES ('bigharri', 'cerise');
+INSERT INTO bonbons (nom, saveur) VALUES ('oursor', 'fruits');
+INSERT INTO bonbons (nom, saveur) VALUES ('croco', 'fruits');
+INSERT INTO bonbons (nom, saveur) VALUES ('oeufoplat', 'guimauve');
+INSERT INTO bonbons (nom, saveur) VALUES ('flanbotti', 'caramel');
+
+
+***************************************************************************************************************************************************
+
+

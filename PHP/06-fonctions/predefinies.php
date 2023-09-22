@@ -167,7 +167,7 @@
 // les fonction prédefinies sont celles qui sont déja codées, mises à notre disposition par PHP (par exemple isset()  )
 
 // 01- strlen() et iconv_strlen()
-/* les deux permettent se tester le longueur d'une cahien de caractéres (pour que par exemple on n'entre pas 20 caractére pour un pseudo, 
+/* les deux permettent se tester la longueur d'une chaine de caractéres (pour que par exemple on entre pas 20 caractére pour un pseudo, 
 on limiter au maximum   20)   les espaces sont comptés */
 
 
@@ -188,7 +188,7 @@ $phrase = " Lorem ipsum color sit amet consectetur adipisicing elit .  Enim , to
 
 //  02- substring
 // fonction prédéfinie qui permet de sélectionner une chaine de caractéres à des endrois précis et supprimés le reste
-// elle prend 3 paramétres . La chaine à décuper, le point d edépart et le point d'arrivée
+// elle prend 3 paramétres . La chaine à décuper, le point de départ et le point d'arrivée
 //  je veux conserver la premiére moitié de ma chaine de caractéres
 
 

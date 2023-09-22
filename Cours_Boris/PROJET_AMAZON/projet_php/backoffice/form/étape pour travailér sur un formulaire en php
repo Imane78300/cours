@@ -1,0 +1,97 @@
+Avoir un formulaire en html
+ 1 - la méthod "POST" ( methode='POST')
+ 2 - l'attrebut 'name' dans chaque champs du formulaire (<input type='text' name='firstname'>)
+ 3 - Si on travaille avec un fishier à upload rajouter l'attrebut 'enctype' (enctype ='multipart /form-data | $_FILES )
+
+
+ 4 - Avoir un fichier PHP exemple (form_traitement.php) 
+ 5 - de recuperer le fichier form_traitement.php depuis la page du formulaire (require-once('form-traitement .php))
+ 6 - la on appelle notre fichier php mais c'est mieux de le appler en haut du fichier html 
+ 7 - vérifier Si le formulaire a bien été soumis =>( !empty($_POST ) )
+
+  ************** vérifier Si chaque champ est bien remplis ***************
+
+    if(!empty($_POST)){
+    extract($_POST);                       
+
+    $image=$_FILES['image']['name'];
+
+    if(!empty($title) && !empty($description) && !empty($price) &&  !empty($stock) &&  !empty($discount) &&  !empty($image)){
+
+      si le formulaire et remplie tu m'affiche ce message 
+
+      echo "formulaire bien rempli ! ";
+    
+    la en déffinit le iduser qui est la perssone qui a créé le produit ;
+
+      $iduser= $_SESSION['id_user'];// le créateur du produit est celui de la session connecté 
+      // soit, $_SESSION. 
+
+
+
+
+
+  **************procéder au traitement du formulaire ( envoyer les donnés sur un fichier ou une base de donné)****************
+
+
+
+  Exemple de traitement d'un formulaire en PHP
+
+   $nom_du_site = "La redoute";
+      if( !empty($_POST) ){
+	        if( !empty( $_POST['email']) ){
+		$email = $_POST['email'];
+		// $file = fopen('data/email.txt', 'w');
+		// fwrite($file, $email);
+		// fclose($file);
+		// $connexion = mysqli_connect('localhost','root','','info');
+		// $sqlInsertInfo = "INSERT INTO 'user' ('email') VALUES ('$email')";
+		// mysqli_query($connexion ,$sqlInsertInfo);
+	}
+}
+
+*************************************Pour modifier un produit *************************************************
+
+<!--en commence par créé deux fichier dans le prelier en créé le formulaire et dans le premier fishier puis en part sur le fichier initiale 
+index.php et on cherche la boucle foreche qui quantienne les produits et c'est la ou en vas rajouter un lien en <a href=" ......chemain du fichier ></a>  comme ça des que en touche le produit en part dirrectement sur le formulaire de modufication 
+
+****************************************EXEMPLE*************************************************************************
+
+
+foreach($product as $allprudact){
+
+
+//    print_r($allprudact);
+
+
+
+
+?>
+                    
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="modifier_product.php">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Créateur :  echo $allprudact ['firstname']?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $allprudact['title'] ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                          
+   
+-->
+
+
+$_POST = formulaire
+$_SESSION =  créer des sessions
+$_FILES  =   pour des fichier 
+$_GET = créer des variables dans L'URL / le lien  comme un point d'interogation ? 

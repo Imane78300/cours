@@ -4,34 +4,51 @@
 
 <?php 
 
-
-   
-
-              
-        // print_r( $_POST );
-
-        // echo $_POST['colorFirst'];
-        // print_r($FILES ). pour afficher l 'image
-        
-        //    !empty le contraire de vide 
-        if(!empty($_POST )){
-        if( !empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['price']) && !empty($_FILES)){
-              
-            echo "Formullaire plein, prêt à passer à la suite! ";
-
-            $titre = $_POST['title'];
-            $images = $_POST['image'];
+        // print_r($_POST);pour voir si les infos sont stoker sur le tableau 
+        // echo($_POST['colorFirst']) pour tester si le code de la coleur s'affiche
+          
+// la on a stoker les information dans les variables
+        if (!empty($_POST)){
+            if( !empty( $_files['image'])&& !empty($_POST['title']) && !empty($_POST['text']) && !empty($_POST['price'])){
+            
             $color1 = $_POST['colorFirst'];
             $color2 = $_POST['colorSecond'];
-            $produit = $_POST['text'];
-            $prix = $_POST['price'];
+            $image  = $_files['image'];
+            $titre  = $_POST['title'];
+            $text   = $_POST['text'];
+            $prix   = $_POST['price'];
 
-            
-                $table = array(  "titre" => $_POST['title'], "images" => $_POST['image'], "color1" => $_POST['colorFirst'], "color2" =>$_POST['colorSeconde'], "produit" => $_POST['text'] , "prix" => $_POST['price'] , "image" => $_FILES['image'] ['name']);
-                
-             
+
+ // créer un tableu qui vas être stoker dans le fichier json
+
+            $tableau = array ("titreduproduit" =>$titre , "Texteduproduit" =>$text , "Prixduproduit" => $prix, 
+            "image" =>$image );
+
+
+            //  créé une variable pour convertire un tableau php en json 
+            $tabeaujson =  json_encode($tableau);
+
+            //  la il faut créé le chemain 
+
+            $filejson = fopen("admin/table.json", "w");
+            fwrite( $filejson, $tableaujson );
+            fclose( $filejson );
+
+    //    recuperation des donner ecrit dans les input
+
+            }
+             $Tous = file_get_contents('admin/table.json');
+             $tableauPHP = json_decode('$Tous', true);
+            //  oblication de lettre true car y'a plusieur caractére 
+
+
         }
-}
+
+
+       
+        
+        
+
 
 
 ?>

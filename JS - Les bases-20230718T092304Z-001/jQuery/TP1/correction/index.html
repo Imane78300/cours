@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de devinette</title>
+    <style>
+        #jeu,
+        #fin-jeu {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Trouve le nombre mystère</h1>
+    <p id="msg"></p>
+
+    <div id="intro">
+        <p id="question">Voulez-vous jouer ?</p>
+        <button id="yes">Oui</button>
+        <button id="no">Non</button>
+    </div>
+
+    <div id="jeu">
+        <p>Tentatives restances : <span id="tentative">7</span></p>
+        <input>
+        <button id="send">Soumettre</button>
+    </div>
+
+    <div id="fin-jeu">
+        <p>A bientôt !</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

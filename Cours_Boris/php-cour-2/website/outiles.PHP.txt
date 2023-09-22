@@ -1,0 +1,92 @@
+reactualier en appuyant sur la barre et entré
+
+
+echo "phrase ou $"; permet d'afficher quelque chose sur ma page chaine de caractere seulement
+
+print_r($); permet d'afficher  un tableau
+
+$color = array('red','blue'); array pour dire que je crée un tableau
+
+var_dump($); affiche contenue d'un tableau + type d'info et nombre de caractere
+
+$_POST => recupere valeur ('name','array', ect)
+
+strlen('$') => compte le nombre de lettre
+
+!empty 'empty' pour verifier si c'est vide | '!empty' pour verifier si c'est plein
+
+method="POST"   a ajouter dans la balise pour pouvoire activer la variable $_POST[""]
+
+fopen('chemin/fichier.txt','w'); creation ou lecture de fichier log w => ecriture + lecture fichier
+
+fwrite($file, $log); ecriture dans le fichier
+
+fclose($file); fermeture du fichier log par securité
+
+$log.PHP_EOL => PHP_EOL permet de mettre a la ligne sur le fichier log.txt
+
+file_get_contents('chemin fichier a lire', boolean true); recuperation des donner ecrit dans les input
+
+ $tableau(variable du tableau = json_encode($table); encoder un tableau php vers json
+
+json_decode($ tableau, boolean true) decoder tableau de json vers php
+
+tester souvent en affichant 'echo=>texte, print_r=>tableau'
+
+enctype="multipart/form-data" a integret dans la balise (exemple <form enctype="multipart/form-data"></form>
+
+$_FILES => recupere valeur d'un input "fichier uploader"
+
+move_uploaded_file($_FILES['produit']['tmp_name'], $uploadFile); permet de deplacer un fichier en cours de telechargement
+
+<img class="card-img-top" src="assets/img/<?php echo $table['prd']; ?>" alt="..." /> integres l'image recupere au html 
+
+si en veut decoder un fishier json en doit mettre le terme true devent la valeure comme ca il va être decodder atant que tableau pas comme object 
+
+__________________________________________________________________________________________________________________________________________________
+
+
+echo "phrase ou $"; : Affiche une chaîne de caractères ou une variable sur la page web.
+
+print_r($); : Affiche le contenu d'un tableau.
+
+$color = array('red','blue'); : Crée un tableau nommé $color avec les valeurs 'red' et 'blue'.
+
+var_dump($); : Affiche le contenu d'une variable, y compris son type et sa taille.
+
+$_POST : Super global en PHP utilisé pour récupérer les valeurs des formulaires envoyées en méthode POST.
+
+strlen('$') : Compte le nombre de caractères dans une chaîne de caractères.
+
+!empty : Une fonction pour vérifier si une variable n'est pas vide. empty vérifie si c'est vide, tandis que !empty vérifie si ce n'est pas vide.
+
+method="POST" : Attribut HTML utilisé dans un formulaire pour spécifier la méthode HTTP à utiliser lors de la soumission du formulaire. Dans ce cas, POST est utilisé pour envoyer les données.
+
+fopen('chemin/fichier.txt','w'); : Ouvre un fichier en mode écriture ('w') ou lecture ('r') et retourne un pointeur de fichier.
+
+fwrite($file, $log); : Écrit le contenu de la variable $log dans le fichier ouvert avec fopen.
+
+fclose($file); : Ferme le fichier ouvert avec fopen pour des raisons de sécurité.
+
+$log.PHP_EOL : variable.php_eol pour ajouter des donner dans un txt les une en desous des autres
+
+file_get_contents('chemin fichier a lire', boolean true); : Récupère le contenu d'un fichier et le stocke dans une variable en PHP. L'argument booléen true peut être utilisé pour obtenir le contenu sous forme de tableau associatif.
+
+$tableau = json_encode($table); : Convertit un tableau PHP en une chaîne JSON pour faciliter le stockage et la transmission de données.
+
+json_decode($tableau, boolean true) : Décode une chaîne JSON en un tableau PHP. L'argument booléen true est utilisé pour obtenir un tableau associatif.
+
+Tester souvent en affichant :
+
+echo => texte : Utilisé pour afficher du texte sur la page web en PHP.
+
+print_r => tableau : Utilisé pour afficher le contenu d'un tableau en PHP.
+
+enctype="multipart/form-data" : Attribut HTML utilisé dans un formulaire pour spécifier que le formulaire contient des données binaires (comme des fichiers). Il doit être intégré dans la balise <form> lors de l'envoi de fichiers, par exemple : <form enctype="multipart/form-data"></form>.
+
+$_FILES : Super global en PHP utilisé pour récupérer des informations sur les fichiers téléchargés via un formulaire HTML.
+
+move_uploaded_file($_FILES['produit']['tmp_name'], $uploadFile); : Déplace un fichier téléchargé depuis son emplacement temporaire vers un emplacement spécifié sur le serveur.
+
+<img class="card-img-top" src="assets/img/<?php echo $table['prd']; ?>" alt="..." /> : Intègre une image dans une page HTML en utilisant la valeur de $table['prd'] pour spécifier le chemin de l'image.
+
