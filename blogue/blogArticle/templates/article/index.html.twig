@@ -10,10 +10,11 @@
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
-                <th>Resumé</th>
+                <th>Resume</th>
                 <th>Auteur</th>
                 <th>Image</th>
                 <th>Contenue</th>
+               <th>CreatedAt</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,10 +23,11 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.Titre }}</td>
-                <td>{{ article.resumé }}</td>
-                <td>{{ article.auteur }}</td>
-                <td>{{ article.image }}</td>
+                <td>{{ article.resume }}</td>
                 <td>{{ article.contenue }}</td>
+                <td>{{ article.auteur }}</td>
+                <td><img width="20%" src="{{ asset('images/article/')}}{{ article.image}}" /></td>
+                <td>{{ article.createdAt|date("Y-m-d H:i:s") }}</td>  
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>

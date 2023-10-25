@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[Vich\Uploadable]
 class Article
 {
     #[ORM\Id]
@@ -25,11 +28,18 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    // NOTE: This is not a mapped field of entity metadata, just a simple property.
+    #[Vich\UploadableField(mapping: 'articles', fileNameProperty: 'image')]
+    private ?File $imageFile = null;
+
     #[ORM\Column(length: 255)]
     private ?string $contenue = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?User $User = null;
 
     public function __construct(){
         $this->createdAt = new \DateTimeImmutable();
@@ -65,17 +75,7 @@ class Article
         return $this;
     }
 
-    public function getAuteur(): ?string
-    {
-        return $this->auteur;
-    }
 
-    public function setAuteur(string $auteur): static
-    {
-        $this->auteur = $auteur;
-
-        return $this;
-    }
 
     public function getImage(): ?string
     {
@@ -87,6 +87,25 @@ class Article
         $this->image = $image;
 
         return $this;
+    }
+
+     /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
     public function getContenue(): ?string
@@ -109,6 +128,18 @@ class Article
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): static
+    {
+        $this->User = $User;
 
         return $this;
     }

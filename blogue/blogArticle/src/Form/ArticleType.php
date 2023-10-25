@@ -7,6 +7,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -15,9 +18,10 @@ class ArticleType extends AbstractType
             ->add('Titre')
             ->add('resume')
             ->add('auteur')
-            ->add('image')
             ->add('contenue')
             ->add('createdAt')
+            ->add('imageFile',VichImageType::class)
+            
         ;
     }
 
