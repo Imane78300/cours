@@ -6,6 +6,19 @@ use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * @extends ServiceEntityRepository<Article>
  *
@@ -20,6 +33,40 @@ class ArticleRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Article::class);
     }
+
+
+    public function getLastInserted($entity, $amount)
+    {
+        return $this->getEntityManager()
+                    ->createQuery(
+                       "SELECT e FROM $entity e ORDER BY e.id DESC"
+                    )
+                    ->setMaxResults($amount)
+                    ->getResult();
+    }
+
+
+
+
+// kNP
+
+
+public function filter(){
+    return $this->createQueryBuilder('a')
+
+      ->orderBy('a.id', 'DESC');
+
+
+}
+
+
+// kNP
+
+
+
+
+
+
 
 //    /**
 //     * @return Article[] Returns an array of Article objects

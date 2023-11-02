@@ -57,11 +57,21 @@
 
             {% endblock %}
  <div class="container">
-  {% block body %}
+
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">
+  
+        {{ message }}
+        </div> 
+        
+    {% endfor %}
+
+  {% block body %}{% endblock %}
 
      
 
-        {% endblock %}
+ 
 
 </div>
        
@@ -70,9 +80,6 @@
 
 
         {% block Footer %}
-
-     
-
         {% endblock %}
         
     </body>

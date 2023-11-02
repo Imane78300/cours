@@ -14,6 +14,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            access_denied_url: /access/denied
             lazy: true
             provider: app_user_provider
             custom_authenticator: App\Security\LoginFormAuthenticator
@@ -39,6 +40,11 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+        
+        - { path: ^/comment/new, role: ROLE_USER }
+        - { path: ^/comment/[0-9]+/edit, role: ROLE_ADMIN }
+        - { path: ^/comment/[0-9]+/delete, role: ROLE_ADMIN }
 
 when@test:
     security:

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -22,14 +24,12 @@ class Article
     #[ORM\Column(length: 255)]
     private ?string $resume = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $auteur = null;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
     // NOTE: This is not a mapped field of entity metadata, just a simple property.
-    #[Vich\UploadableField(mapping: 'articles', fileNameProperty: 'image')]
+    #[Vich\UploadableField(mapping: 'article', fileNameProperty: 'image')]
     private ?File $imageFile = null;
 
     #[ORM\Column(length: 255)]
@@ -38,11 +38,15 @@ class Article
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\ManyToOne(inversedBy: 'article')]
     private ?User $User = null;
+
+    #[ORM\OneToMany(mappedBy: 'Article', targetEntity: Comment::class)]
+    private Collection $comments;
 
     public function __construct(){
         $this->createdAt = new \DateTimeImmutable();
+        $this->comments = new ArrayCollection();
 
     }
 
@@ -143,4 +147,48 @@ class Article
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): static
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments->add($comment);
+            $comment->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): static
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getArticle() === $this) {
+                $comment->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+    // on fesent cete function  il arrive a deffinire l' Article
+
+    public function __toString()
+    {
+        return $this->Titre;
+
+
+    }
+
+
+
 }
+

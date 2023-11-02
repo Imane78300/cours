@@ -20,8 +20,8 @@
                 <td>{{ article.resume }}</td>
             </tr>
             <tr>
-                <th>Auteur</th>
-                <td>{{ article.auteur }}</td>
+                <th>User</th>
+                <td>{{ article.user }}</td>
             </tr>
             <tr>
                 <th>Image</th>
@@ -31,8 +31,38 @@
                 <th>Contenue</th>
                 <td>{{ article.contenue }}</td>
             </tr>
+
+            <tr>
+                <th>CreatedAt </th>
+                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d  H:i:s')}}</td>
+            </tr>
+
+
         </tbody>
     </table>
+    
+
+<hr> 
+
+<h3>Les Commentaire <h3>
+
+
+<h3>Listing des Commentaires<h3>
+
+{% for comment in comments %}
+<h5>Posté par {{comment.user}} le {{comment.createdAt|date('Y-m-d') }} </h5>
+<i>{{comment.contenue}}</i>
+{% endfor %}
+
+    {{ include('article/_form.html.twig') }}
+    
+<hr> 
+
+<hr> 
+
+
+
+
 
     <a href="{{ path('app_article_index') }}">back to list</a>
 
